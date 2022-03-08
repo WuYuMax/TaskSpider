@@ -20,6 +20,8 @@ def anlyse(url,textOfReponse:str):
         return anlyseByDOM(url,textOfReponse)
     elif currentModel == "JSON":
         return anlyseByJson(url,textOfReponse)
+    elif currentModel == "NONE":
+        return textOfReponse
     else:
         print("URL解析方式不支持",currentModel)
     return None

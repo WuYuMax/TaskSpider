@@ -6,7 +6,8 @@ from Core.URLs import WebUrl
 from abc import abstractmethod
 import time
 from requests import Session
+from Task.TaskMessage import TaskMessage
 
 class Task:
-    def run(self)->list:
+    def run(self,message:TaskMessage)->TaskMessage:
       pass

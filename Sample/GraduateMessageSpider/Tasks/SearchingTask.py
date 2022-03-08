@@ -1,4 +1,4 @@
-from Task.DefinedTask import DenfinedTask
+from Task.NetworkTask import DenfinedTask
 from Core.NetWork import VisitorWays
 from requests import Session
 
