@@ -59,7 +59,7 @@ class NetworkTask(Task):
         pass
 
     def run(self,message:TaskMessage)->TaskMessage:
-        self.VisitConfig = self.init(message)
+        self.visitConfig = self.init(message)
         response = self.surf()
         res = self.anlyse(response)
         self.delay()
@@ -72,7 +72,7 @@ class NetworkTask(Task):
         pass
 
     def surf(self):
-        visitConfig = self.VisitConfig
+        visitConfig = self.visitConfig
         response = visit(visitConfig.webUrl,visitConfig.visitoryWay,visitConfig.visitData,visitConfig.visitHeader,visitConfig.Session)
         response.encoding = response.apparent_encoding
         return response
@@ -91,7 +91,7 @@ class NetworkTask(Task):
         pass
 
     def delay(self):
-        time.sleep(self.visitConfig.delayTimes)
+        time.sleep(self.visitConfig.delaytime)
 
 
 

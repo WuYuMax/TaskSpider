@@ -14,11 +14,11 @@ def visit(url,visitways:VisitorWays,data:dict,headers:dict=None,session:requests
     if isinstance(url,str):
         url = WebUrl.parse(url)
 
+    defaultHeader = headers
     # 装配Header
     defaultHeader = {
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.183 Safari/537.36'
     }
-
 
     for key in headers.keys():
         defaultHeader[key] = headers[key]
@@ -50,6 +50,13 @@ def get(url:WebUrl,data:dict,headers:dict,session:requests.Session):
     #     # url.addparms(keys,data[keys])
     # currentUrl = currentUrlBuilder.build()
     # print(currentUrl)
-    if session is not None:
-        return session.get(url.host,params=data,headers=headers)
-    return requests.get(url.host,params=data,headers=headers)
+    # print(url.host,url.params)
+    if data :
+        if session is not None:
+            return session.get(url.host,params=data,headers=headers)
+        return requests.get(url.host,params=data,headers=headers)
+    else :
+        # print('use origin params',url.host,url.params)
+        if session is not None:
+            return session.get(str(url),headers=headers)
+        return requests.get(str(url),headers=headers)

@@ -11,3 +11,7 @@ class TaskMessage():
     def extend(self,datas:dict):
         for key in datas.keys():
             self.__datas[key] = datas[key]
+    def getDic(self):
+        return self.__datas
+    def removeData(self,key):
+        self.__datas.pop(key)

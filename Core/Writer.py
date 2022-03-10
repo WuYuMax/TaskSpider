@@ -21,8 +21,13 @@ class CSVWriter(Writer):
 
         if self.__file is not None and  self.__file.closed is False:
             self.close()
+    def writeTitle(self,message):
+        if not self.writedTitle():
+            self.__csv_writer.writerow(message)
+            self.__writedTitle = True
+
     def writedTitle(self)->bool:
-        return self.writedTitle
+        return self.__writedTitle
     def close(self):
         self.__file.close()
     def write(self, message):

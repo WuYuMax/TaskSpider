@@ -36,6 +36,8 @@ class WebUrl:
 
     def __str__(self):
         currentUrl = self.host
+        if len(self.params.keys()) :
+            currentUrl += '?'
         for i,currentkey in enumerate(self.params.keys()):
             currentUrl += currentkey
             currentUrl += '='
