@@ -38,7 +38,7 @@
 		|         REGEX          | 正则表达式            | regex://a/b0                              |
 		|         XPATH          | xpath解析式           | Xpath:////*[@class=\'zsml-res-items\']/tr |
 		|          DOM           | dom中的selector解析式 | dom://#_next > div._21bLU4._3kbg6I        |
-		|          JSON          | 无需参数              | json://                                   |
+		|          JSON          | 选择json的项目(可选)             | JSON://data/cards/desc/user_profile/info/uname                                   |
 		|     NONE(指不解析)     | 无需参数              | None://                                   |
 		
 		pps:也可以使用Core.URLS.WayUrlBuider构建

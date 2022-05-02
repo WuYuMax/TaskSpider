@@ -19,14 +19,16 @@ class VisitConfig():
         self.visitHeader = dict()
         self.delaytime = 0
         self.Session = None
+        self.encode = None
     class Builder():
         def __init__(self):
            self.producer= VisitConfig()
         def setWebUrl(self,webUrl):
             self.producer.webUrl = webUrl
             return self
-        def addWayUrl(self,wayUrl):
-            self.producer.wayUrls.append(wayUrl)
+        # 已经修改为键值对方案
+        def addWayUrl(self,wayName,wayUrl):
+            self.producer.wayUrls.append((wayName,wayUrl))
             return  self
         def postWay(self):
             self.producer.visitoryWay = VisitorWays.POST
@@ -42,6 +44,9 @@ class VisitConfig():
             return self
         def setDelayTime(self,delayTimes):
             self.producer.delaytime =delayTimes
+            return self
+        def setEncoding(self,encode=None):
+            self.producer.encode = encode
             return self
         def setSession(self,session):
             self.producer.session = session
@@ -74,16 +79,21 @@ class NetworkTask(Task):
     def surf(self):
         visitConfig = self.visitConfig
         response = visit(visitConfig.webUrl,visitConfig.visitoryWay,visitConfig.visitData,visitConfig.visitHeader,visitConfig.Session)
-        response.encoding = response.apparent_encoding
+
+        if visitConfig.encode :
+            response.encoding = visitConfig.encode
+        else:
+            response.encoding = response.apparent_encoding
         return response
         # self.response = visit(self.webUrl,self.visitoryWay,self.visitData,self.visitHeader,self.session)
         # self.response.encoding = self.response.apparent_encoding
 
+    # 已经改为键值对模式
     def anlyse(self,response):
-        resultData = []
-        for wayUrl in self.visitConfig.wayUrls:
+        resultData = {}
+        for wayName,wayUrl in self.visitConfig.wayUrls:
             currentData = Anlyst.anlyse(wayUrl,response.text)
-            resultData.append(currentData)
+            resultData[wayName] = currentData
         return resultData
 
     @abstractmethod

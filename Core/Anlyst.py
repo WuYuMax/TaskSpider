@@ -12,6 +12,7 @@ def anlyse(url,textOfReponse:str):
     # print(str(url.getWay()))
 #     分析URL的解析方法
     currentModel = url.getModel().upper()
+
     if currentModel == "REGEX":
         return anlyseByRegex(url,textOfReponse)
     elif currentModel == "XPATH":
@@ -34,12 +35,14 @@ def anlyseByRegex(url:WayUrl,textOfReponse):
     # print("Anlyse By REGEX")
     return re.findall(url.getWay(),textOfReponse)
 
+# TODO:完成对于结果的Dic化
 # XPath解析方式
 def anlyseByXpath(url:WayUrl,textOfReponse):
     # print("Anlyse By XPath")
     currentHtml = etree.HTML(textOfReponse,parser=etree.HTMLParser(encoding='utf-8'))
     rule = url.getWay()
     res_set = currentHtml.xpath(rule)
+
     # print(textOfReponse)
     return res_set
 
@@ -53,5 +56,31 @@ def anlyseByDOM(url:WayUrl,textOfReponse):
 
 # JSON解析方式
 def anlyseByJson(url:WayUrl,textOfReponse):
-    # print("anlyseByJson")
-    return json.loads(textOfReponse)
+    rules = url.getWay().split('/')
+    currentJson = json.loads(textOfReponse)
+    for rule in rules:
+        currentJson = anlyseJsonList(currentJson,rule)
+
+    return currentJson
+
+def __toList(message):
+    if not isinstance(message,list):
+        return list(message)
+    return message
+
+def getValue(dic,key):
+    # print(dic.keys())
+    if key in dic.keys():
+        return dic[key]
+    return None
+def anlyseJsonList(JsonText,rule):
+
+    if isinstance(JsonText, dict):
+        return  getValue(JsonText, rule)
+    elif isinstance(JsonText, list):
+        temp = []
+        for _ in JsonText:
+            value = anlyseJsonList(_, rule)
+            if value:
+                temp.append(value)
+        return temp
