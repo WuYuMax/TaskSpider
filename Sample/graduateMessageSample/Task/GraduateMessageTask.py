@@ -24,8 +24,11 @@ class GraduateMessageTask(Task):
         return message
 
     def run(self, message: TaskMessage) -> TaskMessage:
+
+        print('=' * 10 + 'Task Start ' + '=' * 10)
         pageno = 0
         # 信息初始化
+        print('='*10+' 信息初始化中 '+'='*10)
         message = self.__messageInit(message)
         wbtask = WBTask(self.filepath)
 
@@ -33,6 +36,9 @@ class GraduateMessageTask(Task):
             # 翻页
             pageno += 1
             message.setData('pageno', pageno)
+            # 开始查询
+            print('=' * 10 + ' Page No.{} start '.format(str(pageno)) + '=' * 10)
+
             # 查找当前页面
             message = PageSearchTask().run(message)
             # 翻找每个页面中的每个学院
@@ -42,9 +48,15 @@ class GraduateMessageTask(Task):
             # 写回信息
             wbtask.run(message)
 
+            # 一页结束
+            print('=' * 10 + ' Page No.{} over '.format(str(pageno)) + '=' * 10)
+
+
             # 回收内存
             message.removeData('urls')
             message.removeData('dataurls')
             message.removeData('res')
+
+        print('=' * 10 + 'Task End ' + '=' * 10)
 
         return message

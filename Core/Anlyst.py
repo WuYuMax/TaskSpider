@@ -57,18 +57,17 @@ def anlyseByDOM(url:WayUrl,textOfReponse):
 # JSON解析方式
 def anlyseByJson(url:WayUrl,textOfReponse):
     rules = url.getWay().split('/')
+
+    # 去除空项
+    rules.remove('')
+
     currentJson = json.loads(textOfReponse)
     for rule in rules:
         currentJson = anlyseJsonList(currentJson,rule)
 
     return currentJson
 
-def __toList(message):
-    if not isinstance(message,list):
-        return list(message)
-    return message
-
-def getValue(dic,key):
+def __getValue(dic,key):
     # print(dic.keys())
     if key in dic.keys():
         return dic[key]
@@ -76,7 +75,7 @@ def getValue(dic,key):
 def anlyseJsonList(JsonText,rule):
 
     if isinstance(JsonText, dict):
-        return  getValue(JsonText, rule)
+        return  __getValue(JsonText, rule)
     elif isinstance(JsonText, list):
         temp = []
         for _ in JsonText:

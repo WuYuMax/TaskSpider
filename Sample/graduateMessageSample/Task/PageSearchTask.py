@@ -30,6 +30,7 @@ class PageSearchTask(NetworkTask):
         if ml and ml is not 'zyxw':
             ml = message.getData('ml')[ml]
         if zy :
+            # print(message.getData('zy'))
             zy = message.getData('zy')[zy]
         xxfs = 1
         page = message.getData('pageno')
@@ -45,8 +46,8 @@ class PageSearchTask(NetworkTask):
         # print(visitData)
 
         config = builder.setSession(self.session).\
-            addWayUrl(self.valueurl).\
-            addWayUrl(self.nextpageurl).\
+            addWayUrl('value',self.valueurl).\
+            addWayUrl('nextpage',self.nextpageurl).\
             setWebUrl(self.weburl).\
             setVisitData(visitData).\
             setVisitHeader(self.Header).\
@@ -60,14 +61,14 @@ class PageSearchTask(NetworkTask):
     def execute(self, visitResult) -> TaskMessage:
         links =[]
         # print(visitResult[1])
-        for line in visitResult[0]:
+        for line in visitResult.get('value'):
             # print(line.get('href'),line.text)
             k_v = {}
             k_v['name'] = line.text
             k_v['url'] = line.get('href')
             links.append(k_v)
 
-        if len(visitResult[1]) == 0:
+        if len(visitResult.get('nextpage')) == 0:
             self.message.setData('morePage',True)
         else:
             self.message.setData('morePage',False)

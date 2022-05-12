@@ -24,8 +24,8 @@ class MessageGetTask(NetworkTask):
         self.message = message
 
         return VisitConfig.Builder()\
-            .addWayUrl(self.paramsUrl)\
-            .addWayUrl(self.fwUrl)\
+            .addWayUrl('params',self.paramsUrl)\
+            .addWayUrl('fw',self.fwUrl)\
             .setWebUrl(weburl)\
             .setSession(self.session)\
             .getWay()\
@@ -34,7 +34,7 @@ class MessageGetTask(NetworkTask):
             .build()
 
     def execute(self, visitResult) -> TaskMessage:
-        table = visitResult[0]
+        table = visitResult.get('params')
         res =[]
         basetable = {}
         basetable['school_name'] = table[0].text
@@ -46,7 +46,7 @@ class MessageGetTask(NetworkTask):
         basetable['tearcher'] = table[6].text
         basetable['numOfPeople'] = table[7].text
 
-        for line in visitResult[1]:
+        for line in visitResult.get('fw'):
             temp = copy.deepcopy(basetable)
 
             values = line.findall('td')

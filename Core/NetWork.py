@@ -53,10 +53,10 @@ def get(url:WebUrl,data:dict,headers:dict,session:requests.Session):
     # print(url.host,url.params)
     if data :
         if session is not None:
-            return session.get(url.host,params=data,headers=headers)
-        return requests.get(url.host,params=data,headers=headers)
+            return session.get(url.host,params=data,headers=headers,stream=True)
+        return requests.get(url.host,params=data,headers=headers,stream=True)
     else :
         # print('use origin params',url.host,url.params)
         if session is not None:
-            return session.get(str(url),headers=headers)
-        return requests.get(str(url),headers=headers)
+            return session.get(str(url),headers=headers,stream=True)
+        return requests.get(str(url),headers=headers,stream=True)

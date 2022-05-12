@@ -7,13 +7,13 @@ class SSTask(NetworkTask):
     def __init__(self):
         super().__init__()
         self.visUrl = "https://yz.chsi.com.cn/zsml/pages/getSs.jsp"
-        self.wayUrl = "JSON://none"
+        self.wayUrl = "JSON://"
 
     def init(self, message: TaskMessage) -> VisitConfig:
         builder = VisitConfig.Builder()
         visitconfig =builder.setWebUrl(self.visUrl)\
             .postWay()\
-            .addWayUrl(self.wayUrl)\
+            .addWayUrl('ss',self.wayUrl)\
             .setDelayTime(0)\
             .setVisitData(dict())\
             .setVisitHeader(dict())\
@@ -26,7 +26,7 @@ class SSTask(NetworkTask):
 
         res = {}
 
-        for k_v in visitResult[0]:
+        for k_v in visitResult['ss']:
             res[k_v['mc']] = k_v['dm']
         self.message.setData(key='ss',value=res)
         return self.message
@@ -35,13 +35,13 @@ class MLTask(NetworkTask):
     def __init__(self):
         super().__init__()
         self.visUrl = "https://yz.chsi.com.cn/zsml/pages/getMl.jsp"
-        self.wayUrl = "JSON://none"
+        self.wayUrl = "JSON://"
 
     def init(self, message: TaskMessage) -> VisitConfig:
         builder = VisitConfig.Builder()
         visitconfig =builder.setWebUrl(self.visUrl)\
             .postWay()\
-            .addWayUrl(self.wayUrl)\
+            .addWayUrl('ml',self.wayUrl)\
             .setDelayTime(0)\
             .setVisitData(dict())\
             .setVisitHeader(dict())\
@@ -54,7 +54,7 @@ class MLTask(NetworkTask):
 
         res = {}
 
-        for k_v in visitResult[0]:
+        for k_v in visitResult['ml']:
             res[k_v['mc']] = k_v['dm']
         self.Message.setData(key='ml',value=res)
         # print(res)
@@ -65,13 +65,13 @@ class ZYTask(NetworkTask):
     def __init__(self):
         super().__init__()
         self.visUrl = "https://yz.chsi.com.cn/zsml/pages/getZy.jsp"
-        self.wayUrl = "JSON://none"
+        self.wayUrl = "JSON://"
 
     def init(self, message: TaskMessage) -> VisitConfig:
         builder = VisitConfig.Builder()
         visitconfig = builder.setWebUrl(self.visUrl) \
             .postWay() \
-            .addWayUrl(self.wayUrl) \
+            .addWayUrl('zy',self.wayUrl) \
             .setDelayTime(0) \
             .setVisitData(dict()) \
             .setVisitHeader(dict()) \
@@ -82,7 +82,7 @@ class ZYTask(NetworkTask):
     def execute(self, visitResult) -> TaskMessage:
         res = {}
 
-        for k_v in visitResult[0]:
+        for k_v in visitResult['zy']:
             res[k_v['mc']] = k_v['dm']
         self.Message.setData(key='zy', value=res)
         return self.Message
@@ -104,4 +104,4 @@ class BaseMessageTask(Task):
 
 if __name__ == '__main__':
     newMessage = BaseMessageTask().run(TaskMessage())
-    print(newMessage.getData('ml'))
+    # print(newMessage.getData('ml'))

@@ -34,8 +34,8 @@ class GoToSingleMessagePageTask(NetworkTask):
             self.session = message.getData('session')
 
         return VisitConfig.Builder()\
-            .addWayUrl(self.wayurl)\
-            .addWayUrl(self.hasnext)\
+            .addWayUrl('value',self.wayurl)\
+            .addWayUrl('hasnext',self.hasnext)\
             .setWebUrl(weburl)\
             .setDelayTime(0.5)\
             .setVisitData(None)\
@@ -46,17 +46,17 @@ class GoToSingleMessagePageTask(NetworkTask):
     def execute(self, visitResult) -> TaskMessage:
         # print(visitResult)
         res = []
-        for value in visitResult[0]:
+        for value in visitResult.get('value'):
             t = {}
             t['url'] = value.get('href')
             res.append(t)
 
         self.message.setData('dataurls',res)
 
-        if len(visitResult[1]) == 0:
+        if len(visitResult.get('hasnext')) == 0:
             self.message.setData('hasnextpage',True)
         else:
-            self.message.setData('len',len(visitResult[1]))
+            self.message.setData('len',len(visitResult.get('hasnext')))
             self.message.setData('hasnextpage',False)
 
 
