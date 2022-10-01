@@ -67,8 +67,9 @@ class NetworkTask(Task):
         self.visitConfig = self.init(message)
         response = self.surf()
         res = self.anlyse(response)
+        self.response = response
         self.delay()
-        newMessage = self.execute(res)
+        newMessage = self.execute(res,message)
         return newMessage
 
     # 我们在init阶段将message中的内容成功转化为我们需要的内容
@@ -97,7 +98,7 @@ class NetworkTask(Task):
         return resultData
 
     @abstractmethod
-    def execute(self,visitResult)->TaskMessage:
+    def execute(self,visitResult,message:TaskMessage)->TaskMessage:
         pass
 
     def delay(self):

@@ -21,7 +21,7 @@ class MessageGetTask(NetworkTask):
         self.session = Session()
         if not message.getData('session'):
             self.session = message.getData('session')
-        self.message = message
+
 
         return VisitConfig.Builder()\
             .addWayUrl('params',self.paramsUrl)\
@@ -33,7 +33,7 @@ class MessageGetTask(NetworkTask):
             .setVisitHeader(dict())\
             .build()
 
-    def execute(self, visitResult) -> TaskMessage:
+    def execute(self, visitResult,message:TaskMessage) -> TaskMessage:
         table = visitResult.get('params')
         res =[]
         basetable = {}
@@ -56,8 +56,8 @@ class MessageGetTask(NetworkTask):
             temp['z2'] = values[3].text.strip()
             res.append(temp)
 
-        self.message.setData('res',res)
-        return self.message
+        message.setData('res',res)
+        return message
 
 
 

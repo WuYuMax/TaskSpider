@@ -2,16 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f765cf45-7483-4060-b213-7b2046557086" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Sample/graduateMessageSample/dic/zyxw能源动力.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sample/graduateMessageSample/dic/工学控制科学与工程.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sample/graduateMessageSample/dic/工学电气工程.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Anlyst.py" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Anlyst.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/NetWork.py" beforeDir="false" afterPath="$PROJECT_DIR$/Core/NetWork.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sample/graduateMessageSample/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sample/graduateMessageSample/Main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sample/graduateMessageSample/Task/BaseMessageTask.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sample/graduateMessageSample/Task/BaseMessageTask.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sample/graduateMessageSample/Task/GoToMessagePageTask.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sample/graduateMessageSample/Task/GoToMessagePageTask.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sample/graduateMessageSample/Task/GraduateMessageTask.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sample/graduateMessageSample/Task/GraduateMessageTask.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sample/graduateMessageSample/Task/MessageGetTask.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sample/graduateMessageSample/Task/MessageGetTask.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sample/graduateMessageSample/Task/PageSearchTask.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sample/graduateMessageSample/Task/PageSearchTask.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task/NetworkTask.py" beforeDir="false" afterPath="$PROJECT_DIR$/Task/NetworkTask.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,30 +192,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1651407474047" />
-    <state x="882" y="162" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1646894969777">
+    <state width="1515" height="329" key="GridCell.Tab.0.bottom" timestamp="1656141340180">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="882" y="162" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1646894969777" />
-    <state width="1515" height="330" key="GridCell.Tab.0.bottom" timestamp="1652345731777">
+    <state width="1515" height="329" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1656141340180" />
+    <state width="1515" height="329" key="GridCell.Tab.0.center" timestamp="1656141340180">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="330" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1652345731777" />
-    <state width="1515" height="330" key="GridCell.Tab.0.center" timestamp="1652345731777">
+    <state width="1515" height="329" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1656141340180" />
+    <state width="1515" height="329" key="GridCell.Tab.0.left" timestamp="1656141340180">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="330" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1652345731777" />
-    <state width="1515" height="330" key="GridCell.Tab.0.left" timestamp="1652345731777">
+    <state width="1515" height="329" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1656141340180" />
+    <state width="1515" height="329" key="GridCell.Tab.0.right" timestamp="1656141340180">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="330" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1652345731777" />
-    <state width="1515" height="330" key="GridCell.Tab.0.right" timestamp="1652345731777">
+    <state width="1515" height="329" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1656141340180" />
+    <state x="652" y="232" key="com.intellij.ide.util.TipDialog" timestamp="1656585670287">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="330" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1652345731777" />
-    <state x="652" y="232" key="com.intellij.ide.util.TipDialog" timestamp="1652344267200">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="652" y="232" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1652344267200" />
+    <state x="652" y="232" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1656585670287" />
     <state x="430" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1651412712791">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

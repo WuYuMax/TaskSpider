@@ -18,18 +18,16 @@ class SSTask(NetworkTask):
             .setVisitData(dict())\
             .setVisitHeader(dict())\
             .build()
-        self.message = message
         return visitconfig
 
 
-    def execute(self, visitResult) -> TaskMessage:
-
+    def execute(self, visitResult,message:TaskMessage) -> TaskMessage:
         res = {}
 
         for k_v in visitResult['ss']:
             res[k_v['mc']] = k_v['dm']
-        self.message.setData(key='ss',value=res)
-        return self.message
+        message.setData(key='ss',value=res)
+        return message
 
 class MLTask(NetworkTask):
     def __init__(self):
@@ -46,19 +44,19 @@ class MLTask(NetworkTask):
             .setVisitData(dict())\
             .setVisitHeader(dict())\
             .build()
-        self.Message = message
+
         return visitconfig
 
 
-    def execute(self, visitResult) -> TaskMessage:
+    def execute(self, visitResult,message:TaskMessage) -> TaskMessage:
 
         res = {}
 
         for k_v in visitResult['ml']:
             res[k_v['mc']] = k_v['dm']
-        self.Message.setData(key='ml',value=res)
-        # print(res)
-        return self.Message
+        message.setData(key='ml',value=res)
+
+        return message
 
 
 class ZYTask(NetworkTask):
@@ -76,16 +74,16 @@ class ZYTask(NetworkTask):
             .setVisitData(dict()) \
             .setVisitHeader(dict()) \
             .build()
-        self.Message = message
+
         return visitconfig
 
-    def execute(self, visitResult) -> TaskMessage:
+    def execute(self, visitResult,message:TaskMessage) -> TaskMessage:
         res = {}
 
         for k_v in visitResult['zy']:
             res[k_v['mc']] = k_v['dm']
-        self.Message.setData(key='zy', value=res)
-        return self.Message
+        message.setData(key='zy', value=res)
+        return message
 
 class BaseMessageTask(Task):
 

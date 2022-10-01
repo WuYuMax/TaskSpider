@@ -12,7 +12,6 @@ class PageSearchTask(NetworkTask):
         self.Header = {}
 
     def init(self, message: TaskMessage) -> VisitConfig:
-        self.message = message
         builder = VisitConfig.Builder()
 
         if not message.getData('session') :
@@ -58,9 +57,8 @@ class PageSearchTask(NetworkTask):
         # print(config.visitData,config.visitHeader)
         return config
 
-    def execute(self, visitResult) -> TaskMessage:
+    def execute(self, visitResult,message:TaskMessage) -> TaskMessage:
         links =[]
-        # print(visitResult[1])
         for line in visitResult.get('value'):
             # print(line.get('href'),line.text)
             k_v = {}
@@ -69,14 +67,14 @@ class PageSearchTask(NetworkTask):
             links.append(k_v)
 
         if len(visitResult.get('nextpage')) == 0:
-            self.message.setData('morePage',True)
+            message.setData('morePage',True)
         else:
-            self.message.setData('morePage',False)
+            message.setData('morePage',False)
 
-        self.message.setData('urls',links)
-        self.message.setData('session',self.session)
+        message.setData('urls',links)
+        message.setData('session',self.session)
 
-        return self.message
+        return message
 
 
 if __name__ == '__main__':
