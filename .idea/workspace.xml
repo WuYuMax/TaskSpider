@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f765cf45-7483-4060-b213-7b2046557086" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Sample/graduateMessageSample/dic/zyxw能源动力.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sample/graduateMessageSample/dic/工学控制科学与工程.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sample/graduateMessageSample/dic/工学电气工程.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Helper/DownLoad/DownLoadFileTask.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/DownLoadTaskTest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sample/graduateMessageSample/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sample/graduateMessageSample/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sample/graduateMessageSample/Task/BaseMessageTask.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sample/graduateMessageSample/Task/BaseMessageTask.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sample/graduateMessageSample/Task/GoToMessagePageTask.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sample/graduateMessageSample/Task/GoToMessagePageTask.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sample/graduateMessageSample/Task/MessageGetTask.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sample/graduateMessageSample/Task/MessageGetTask.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sample/graduateMessageSample/Task/PageSearchTask.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sample/graduateMessageSample/Task/PageSearchTask.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sample/graduateMessageSample/dic/zyxw电子信息.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Sample/graduateMessageSample/dic/zyxw电子信息.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task/NetworkTask.py" beforeDir="false" afterPath="$PROJECT_DIR$/Task/NetworkTask.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +20,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="232b3gIuUhJ056PlGtJjPujE4Lf" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -56,7 +47,7 @@
       <recent name="D:\代码\EasySpider\Tasks" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Main">
+  <component name="RunManager" selected="Python.DownLoadTaskTest">
     <configuration name="CombineTest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TaskSpider" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -78,7 +69,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="GoToMessagePageTask" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="DownLoadTaskTest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TaskSpider" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -86,11 +77,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Sample/graduateMessageSample/Task" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Sample/graduateMessageSample/Task/GoToMessagePageTask.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Test/DownLoadTaskTest.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -164,11 +155,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.DownLoadTaskTest" />
         <item itemvalue="Python.Main" />
         <item itemvalue="Python.NetWorkTaskTest" />
         <item itemvalue="Python.CombineTest" />
         <item itemvalue="Python.MessageGetTask" />
-        <item itemvalue="Python.GoToMessagePageTask" />
       </list>
     </recent_temporary>
   </component>
@@ -189,25 +180,37 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.csv" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1515" height="329" key="GridCell.Tab.0.bottom" timestamp="1664615321725">
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1664633385035">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="329" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1664615321725" />
-    <state width="1515" height="329" key="GridCell.Tab.0.center" timestamp="1664615321725">
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1664633385035" />
+    <state width="1515" height="329" key="GridCell.Tab.0.bottom" timestamp="1664635617394">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="329" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1664615321725" />
-    <state width="1515" height="329" key="GridCell.Tab.0.left" timestamp="1664615321725">
+    <state width="1515" height="329" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1664635617394" />
+    <state width="1515" height="329" key="GridCell.Tab.0.center" timestamp="1664635617394">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="329" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1664615321725" />
-    <state width="1515" height="329" key="GridCell.Tab.0.right" timestamp="1664615321725">
+    <state width="1515" height="329" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1664635617394" />
+    <state width="1515" height="329" key="GridCell.Tab.0.left" timestamp="1664635617394">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="329" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1664615321725" />
+    <state width="1515" height="329" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1664635617394" />
+    <state width="1515" height="329" key="GridCell.Tab.0.right" timestamp="1664635617394">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="329" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1664635617394" />
     <state x="652" y="232" key="com.intellij.ide.util.TipDialog" timestamp="1656585670287">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="652" y="232" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1656585670287" />
+    <state x="1006" y="332" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1664619140500">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="1006" y="332" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1664619140500" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1664633532080">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1664633532080" />
   </component>
 </project>
