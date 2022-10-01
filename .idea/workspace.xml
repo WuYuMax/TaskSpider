@@ -13,6 +13,7 @@
       <change beforePath="$PROJECT_DIR$/Sample/graduateMessageSample/Task/GoToMessagePageTask.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sample/graduateMessageSample/Task/GoToMessagePageTask.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sample/graduateMessageSample/Task/MessageGetTask.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sample/graduateMessageSample/Task/MessageGetTask.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sample/graduateMessageSample/Task/PageSearchTask.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sample/graduateMessageSample/Task/PageSearchTask.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sample/graduateMessageSample/dic/zyxw电子信息.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Sample/graduateMessageSample/dic/zyxw电子信息.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Task/NetworkTask.py" beforeDir="false" afterPath="$PROJECT_DIR$/Task/NetworkTask.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -188,33 +189,25 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.csv" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1651407474047">
+    <state width="1515" height="329" key="GridCell.Tab.0.bottom" timestamp="1664615321725">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1651407474047" />
-    <state width="1515" height="329" key="GridCell.Tab.0.bottom" timestamp="1656141340180">
+    <state width="1515" height="329" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1664615321725" />
+    <state width="1515" height="329" key="GridCell.Tab.0.center" timestamp="1664615321725">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="329" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1656141340180" />
-    <state width="1515" height="329" key="GridCell.Tab.0.center" timestamp="1656141340180">
+    <state width="1515" height="329" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1664615321725" />
+    <state width="1515" height="329" key="GridCell.Tab.0.left" timestamp="1664615321725">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="329" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1656141340180" />
-    <state width="1515" height="329" key="GridCell.Tab.0.left" timestamp="1656141340180">
+    <state width="1515" height="329" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1664615321725" />
+    <state width="1515" height="329" key="GridCell.Tab.0.right" timestamp="1664615321725">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="329" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1656141340180" />
-    <state width="1515" height="329" key="GridCell.Tab.0.right" timestamp="1656141340180">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1515" height="329" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1656141340180" />
+    <state width="1515" height="329" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1664615321725" />
     <state x="652" y="232" key="com.intellij.ide.util.TipDialog" timestamp="1656585670287">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="652" y="232" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1656585670287" />
-    <state x="430" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1651412712791">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="430" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1651412712791" />
   </component>
 </project>

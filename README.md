@@ -6,15 +6,16 @@
 #### Task包
 1. Task
 	本部分将作为任务处理的基本容器我们可以在非网络任务中继承这个基本类。这个基本类只提供了run(message:TaskMessage)->TaskMessage一个接口用于处理数据。
-	
+	ps: 虽然可以在execute中可以修改Message但我们还是建议将修改后的message返回以保持各个Task运行的一致性。
 2. NetWorkTask
 	1. NetWorkTask
 		本模块为处理网络任务的基本容器在本模块中我们封装了一个爬虫的基本内容，我们完成了四个方法，其中需要用户覆盖的方法有二：
 		1. init(TaskMessage)->VisitConfig
-			从传进来的数据块中提取出访问需要的Config并返回.
-		2. execute(Response)->TaskMessage
-			从解析完成的数据中提取需要写回的内容并且返回写完的数据块.
-			ps:Reponse返回的是一个解析URL列表返回的结果列表。
+			从传进来的数据块中提取出访问需要的Config并返回。
+		2. execute(Response,message)->TaskMessage
+			从解析完成的数据中提取需要写回的内容并且返回写完的数据块,message为你需要求改的message。
+			ps: Reponse返回的是一个解析URL列表返回的结果列表。
+			pps: 虽然可以在execute中可以修改Message但我们还是建议将修改后的message返回以保持各个Task运行的一致性。
 		
 	2. VisitConfig
 		内含访问需要的内容。
