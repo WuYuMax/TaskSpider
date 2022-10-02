@@ -3,17 +3,20 @@ from Task.TaskMessage import TaskMessage
 import codecs
 import os
 '''
+
 DownLoadTask:
-@input: DownLoadUrl:str,OrderDirPath:str,FileName:str 如果FileName不存在则截取最后名
+@input: DownLoad={DownLoadUrl:str,OrderDirPath:str,FileName:str 如果FileName不存在则截取最后名}
 '''
+
 
 
 class DownLoadFileTask(NetworkTask):
 
     def init(self, message: TaskMessage) -> VisitConfig:
-        downloadUrl:str = message.getData('DownLoadUrl')
-        self.orderDirPath = message.getData('OrderDirPath')
-        fileName = message.getData('FileName')
+        downLoadMessage = message.getData('DownLoad')
+        downloadUrl:str = downLoadMessage.get('DownLoadUrl')
+        self.orderDirPath = downLoadMessage.get('OrderDirPath')
+        fileName = downLoadMessage.get('FileName')
         if fileName is None:
             fileName = downloadUrl.split('/')[-1]
         self.FileName = fileName

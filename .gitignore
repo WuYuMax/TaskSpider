@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 #SampleÖĞµÄÀı×Ó
 Sample/graduateMessageSample/dic/*
+Test/*
