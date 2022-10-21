@@ -98,9 +98,9 @@
 	
 	task: 需要并行的任务；
 	
-	paramsName:message中哪个属性是需要拆分到每个并行任务中的；
+	paramsName:message中哪个属性是需要拆分到每个并行任务中的；其中我们推荐将子任务需要的message信息组成一个字典列表来完成并行。
 	
-	orderName:Task完成后我们将Task返回的message中哪个数据统一写回的最终的message中；
+	orderName:Task完成后我们将Task返回的message中的数据统一写回的最终的message中orderName属性中，默认会生成一个字典列表。
 	
 	numOfThread:任务中线程池中的线程个数。
 	
