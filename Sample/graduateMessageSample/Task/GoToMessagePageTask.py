@@ -20,7 +20,7 @@ class GoToSingleMessagePageTask(NetworkTask):
 
 
     def init(self, message: TaskMessage) -> VisitConfig:
-        params = message.getData('urls')
+        params = message.getDic()
         suburl = params['url']
         weburl = self.baseUrl + suburl
         weburl:WebUrl = WebUrl.parse(weburl)

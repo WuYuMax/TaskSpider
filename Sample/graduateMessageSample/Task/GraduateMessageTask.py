@@ -41,10 +41,23 @@ class GraduateMessageTask(Task):
 
             # 查找当前页面
             message = PageSearchTask().run(message)
-            # 翻找每个页面中的每个学院
+            # 翻找每个页面中的每个学院/这里结束变量名字无需跟结果一样
             BigTask(GoToMessagePageTask(), 'urls', 'dataurls').run(message)
+            # 数据简单处理
+            dataurls = []
+            for dataurl in message.getData('dataurls'):
+                dataurls.extend(dataurl['dataurls'])
+            message.setData('dataurls',dataurls)
+            print('over')
             # 从每个学院信息中提取信息
             BigTask(MessageGetTask(), 'dataurls', 'res').run(message)
+            # 数据简单处理
+            dataurls = []
+            for dataurl in message.getData('res'):
+                dataurls.extend(dataurl['res'])
+            message.setData('res', dataurls)
+            # print(message.getDic())
+            # exit()
             # 写回信息
             wbtask.run(message)
 

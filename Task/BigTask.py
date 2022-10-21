@@ -5,6 +5,7 @@ import time
 import threading
 import copy
 
+# From orderName take your messages and Run The Task ,The New Message Will Be Take to the OrderName
 class BigTask(Task):
     __MAX_Threads = 8
 
@@ -18,26 +19,26 @@ class BigTask(Task):
         self.paramsName = paramsName
         self.orderName = orderName
         self.task = task
-        # self.Pool = threading.ThreadPool(numOfThread)
-        # if len(taskList) < self.__MAX_Threads:
-        #     self.Pool = threadpool.ThreadPool(len(taskList))
-        # else:
-        #     self.Pool = threadpool.ThreadPool(self.__MAX_Threads)
 
 
     def __collectAllTask(a,request,response:TaskMessage):
         a.resultMutex.acquire()
-        value = response.getData(a.orderName)
-        a.resultMessage.extend(value)
+
+        value = response.getDic()
+
+        a.resultMessage.append(value)
         a.resultMutex.release()
 
     def __dispatchMessage(self,message:TaskMessage)->list:
         messages =[]
-        # print(message.getData(self.paramsName))
         for param in message.getData(self.paramsName):
-            current = copy.deepcopy(message)
-            current.removeData(self.paramsName)
-            current.setData(self.paramsName,param)
+            current = TaskMessage()
+            # current.removeData(self.paramsName)
+            if type(param) is dict:
+                current.setDic(param)
+            else:
+                current.setData(self.paramsName,param)
+            # print(current.getDic())
             messages.append(current)
         return messages
 

@@ -15,7 +15,8 @@ class MessageGetTask(NetworkTask):
 
 
     def init(self, message: TaskMessage) -> VisitConfig:
-        subUrl = message.getData('dataurls')['url']
+        subUrl = message.getData('url')
+        # print(message.getDic())
         weburl = self.baseUrl +subUrl
 
         self.session = Session()
