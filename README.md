@@ -59,34 +59,30 @@
 	
 	  ```
 	  class SSTask(NetworkTask):
-	      def __init__(self):
-	          super().__init__()
-	          
-	          #赋值基础常量 访问URL与解析URL
-	          self.visitUrl = "https://yz.chsi.com.cn/zsml/pages/getSs.jsp"
-	          self.wayUrl = "JSON://none"
-	  
-	      def init(self, message: TaskMessage) -> VisitConfig:
-	          builder = VisitConfig.Builder()
-	          visitconfig =builder.setWebUrl(self.visUrl)\
-	              .postWay()\
-	              .addWayUrl(self.wayUrl)\
-	              .setDelayTime(0)\
-	              .setVisitData(dict())\
-	              .setVisitHeader(dict())\
-	              .build()
-	          self.message = message
-	          return visitconfig
-	  
-	  
-	      def execute(self, visitResult) -> TaskMessage:
-	  
-	          res = {}
-	  
-	          for k_v in visitResult[0]:
-	              res[k_v['mc']] = k_v['dm']
-	          self.message.setData(key='ss',value=res)
-	          return self.message
+	    def __init__(self):
+		super().__init__()
+		self.visUrl = "https://yz.chsi.com.cn/zsml/pages/getSs.jsp"
+		self.wayUrl = "JSON://"
+
+	    def init(self, message: TaskMessage) -> VisitConfig:
+		builder = VisitConfig.Builder()
+		visitconfig =builder.setWebUrl(self.visUrl)\
+		    .postWay()\
+		    .addWayUrl('ss',self.wayUrl)\
+		    .setDelayTime(0)\
+		    .setVisitData(dict())\
+		    .setVisitHeader(dict())\
+		    .build()
+		return visitconfig
+
+
+	    def execute(self, visitResult,message:TaskMessage) -> TaskMessage:
+		res = {}
+
+		for k_v in visitResult['ss']:
+		    res[k_v['mc']] = k_v['dm']
+		message.setData(key='ss',value=res)
+		return message
 	  ```
 	
 3. BigTask
