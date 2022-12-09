@@ -31,7 +31,7 @@
 		|        变量名        |    含义     |            备注             |
 		| :------------------: | :---------: | :-------------------------: |
 		|        webUrl        |   访问URL   |  输入host或者加上参数均可   |
-		|    wayUrls:list()    | 解析URL列表 | 格式： 解析方式://解析参数  |
+		|    wayUrls:dict()   | 解析URL字典 | 格式： 解析方式://解析参数  |
 		| visitWay:VisitorWays |  访问方式   | 一个含有Post和Get的枚举类型 |
 		|      visitData       |  访问数据   |      访问时携带的参数       |
 		|     visitHeader      |  访问头部   |            可空             |
